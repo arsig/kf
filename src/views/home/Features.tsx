@@ -1,16 +1,38 @@
 /* eslint-disable @next/next/no-img-element */
-import { Accordion, IAccordionItem } from '@components/Accordion/Accordion'
+import { Accordion } from '@components/Accordion/Accordion'
 import { NavSpacer } from '@components/Nav/NavSpacer'
 import { Container } from '@components/UI/Container'
 import { Title } from '@components/UI/Title'
-import useTranslation from 'next-translate/useTranslation'
+
+const featureList = [
+  {
+    title: 'Blockchain Strategy',
+    description:
+      'More than simply build awareness – it’s about cutting through a crowded and hype-driven market with bold campaigns that differentiate quickly.',
+  },
+  {
+    title: 'Tokens and Smart Contracts',
+    description:
+      'Provide confidence to organizations around the usage of and interaction with blockchain-based applications and smart contracts.',
+  },
+  {
+    title: 'ICO Marketing',
+    description:
+      'Accelerates growth of start-up companies by offering tools and services that grants exposure to a targeted audience and help generate sales.',
+  },
+  {
+    title: 'Marketing and Promotion Services',
+    description:
+      'The first version of the KOFA allows business startups to launch and market or promote their services to the required or targeted audience using crowdfunding and ICO campaigns.',
+  },
+  {
+    title: 'Global Payment',
+    description:
+      'Technology promises to facilitate fast, secure, low-cost international payment processing services through the use of encrypted distributed ledgers that provide trusted real-time verification of transactions.',
+  },
+]
 
 export const Features = () => {
-  const { t } = useTranslation('home')
-  const features: IAccordionItem[] = t('features.list', null, {
-    returnObjects: true,
-  })
-
   return (
     <>
       <NavSpacer tw="hidden lg:block" />
@@ -25,8 +47,13 @@ export const Features = () => {
 
       <Container tw="mx-auto relative flex-1">
         <div tw="text-center mt-10">
-          <Title>{t`features.title`}</Title>
-          <p tw="text-coolGray-300 mt-6 max-w-3xl mx-auto whitespace-pre-line">{t`features.description`}</p>
+          <Title>Platform Features</Title>
+          <p tw="text-coolGray-300 mt-6 max-w-3xl mx-auto whitespace-pre-line">
+            Our clients – both corporate and private ones – will access all the
+            services they need from a single platform. Blockchain technology
+            gives us the chance to make your finances grow faster and give
+            better returns.
+          </p>
         </div>
 
         <div
@@ -46,7 +73,7 @@ export const Features = () => {
         <div tw="block lg:grid gap-10 grid-flow-col grid-cols-[1.5fr 2fr] lg:space-x-10 mt-10">
           <div tw="relative block" />
           <div tw="mt-10">
-            <Accordion tw="lg:absolute" items={features} />
+            <Accordion tw="lg:absolute" items={featureList} />
           </div>
         </div>
       </Container>

@@ -2,7 +2,6 @@ import { NavSpacer } from '@components/Nav/NavSpacer'
 import { Button } from '@components/UI/Button'
 import { Container } from '@components/UI/Container'
 import { Title } from '@components/UI/Title'
-import useTranslation from 'next-translate/useTranslation'
 import tw, { styled, theme } from 'twin.macro'
 
 import { down } from 'styled-breakpoints'
@@ -67,8 +66,6 @@ interface HomeFooterProps {
 }
 
 export const HomeFooter = ({ goToStart }: HomeFooterProps) => {
-  const { t } = useTranslation('common')
-
   return (
     <>
       <NavSpacer />
@@ -77,11 +74,13 @@ export const HomeFooter = ({ goToStart }: HomeFooterProps) => {
 
       <StyledBackgroundShape tw="bg-gray-900">
         <Container tw="h-full flex flex-col justify-center relative">
-          <Title tw="mt-32 lg:mt-20 text-left">{t`footer.title`}</Title>
+          <Title tw="mt-32 lg:mt-20 text-left">
+            This is just the beginning
+          </Title>
           <div tw="flex flex-col items-start lg:flex-row space-y-8 lg:space-y-0 lg:space-x-20 mt-12">
             <CountdownItem
               color={theme`colors.emerald.400`}
-              title={t`footer.pre-sale`}
+              title="ICO ends in"
               date={config.presale_date}
               tw="text-xl lg:min-w-[200px] xl:min-w-[330px] lg:text-xl xl:text-2xl 2xl:text-4xl text-left"
             />
@@ -94,19 +93,19 @@ export const HomeFooter = ({ goToStart }: HomeFooterProps) => {
               href={config.social.telegram}
               bgColor={theme`colors.cyan.400`}
             >
-              {t`shared.telegram`}
+              Telegram
             </Button>
             <Button
               tw="w-full sm:w-auto sm:flex-1 lg:flex-none"
               size="lg"
               href={config.buy_on.buy_now}
             >
-              {t`shared.buy-now`}
+              Buy Now
             </Button>
           </div>
 
           <p tw="text-right md:text-left mt-8 lg:mt-12">
-            {t`footer.contact-us`}{' '}
+            {'Contact us '}
             <a href={`mailto:${config.email.info}`}>
               <span tw="text-cyan-400">{config.email.info}</span>
             </a>{' '}

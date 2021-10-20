@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { SocialIcons } from '@components/Nav/SocialBar'
 import { routes } from '@lib/config/routes'
-import useTranslation from 'next-translate/useTranslation'
 import logoImg from '@public/images/logos/kofatoken.png'
 import Image from 'next/image'
 import { Container } from '@components/UI/Container'
@@ -28,8 +27,6 @@ interface FooterProps {
 }
 
 export const BaseFooter = ({ logoComponent, ...props }: FooterProps) => {
-  const { t } = useTranslation('common')
-
   return (
     <StyledContainer
       tw="mt-auto text-sm lg:text-base relative flex justify-between items-center lg:items-end"
@@ -70,7 +67,7 @@ export const BaseFooter = ({ logoComponent, ...props }: FooterProps) => {
                   rel="noopener noreferrer"
                   href={config.whitepaper_pdf}
                 >
-                  {t`shared.whitepaper`}
+                  Whitepaper
                 </a>
               </li>
             </div>
@@ -85,7 +82,7 @@ export const BaseFooter = ({ logoComponent, ...props }: FooterProps) => {
                   rel="noopener noreferrer"
                   href={config.blockchain.contractUrl}
                 >
-                  {t`shared.contract`}
+                  Contract
                 </a>
               </li>
             </div>
@@ -93,8 +90,14 @@ export const BaseFooter = ({ logoComponent, ...props }: FooterProps) => {
         </nav>
 
         <div tw="text-left">
-          <p>{t`footer.copyright`}</p>
-          <p>{t`footer.trademarks`}</p>
+          <p>
+            Copyright KOFA Token Based on BSC Network © 2021. All rights
+            reserved.
+          </p>
+          <p>
+            All other copyrights and trademarks are the property of their
+            respective owners.
+          </p>
         </div>
       </footer>
 

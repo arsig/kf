@@ -3,7 +3,6 @@ import { NavSpacer } from '@components/Nav/NavSpacer'
 import { Container } from '@components/UI/Container'
 import { FullScreen } from '@components/UI/FullScreen'
 import { Title } from '@components/UI/Title'
-import useTranslation from 'next-translate/useTranslation'
 import { RoadmapNavItems, RoadmapNavItemsProps } from './RoadmapNavItems'
 import { useAppDispatch, useAppSelector } from '@lib/redux/hooks'
 import {
@@ -32,7 +31,6 @@ export const RoadmapNav = ({
   navigate,
   stageRefs,
 }: RoadmapProps) => {
-  const { t } = useTranslation('home')
   const dispatch = useAppDispatch()
   const roadmapNavRef = useRef<HTMLDivElement>(null)
 
@@ -220,8 +218,11 @@ export const RoadmapNav = ({
         <Container ref={roadmapContentRef} tw="mx-auto mb-20">
           <NavSpacer />
           <div tw="text-center mt-10">
-            <Title>{t`roadmap.title`}</Title>
-            <p tw="text-coolGray-300 mt-6 max-w-2xl mx-auto whitespace-pre-line">{t`roadmap.description`}</p>
+            <Title>Kofa Roadmap</Title>
+            <p tw="text-coolGray-300 mt-6 max-w-2xl mx-auto whitespace-pre-line">
+              The ultimate goal of KOFA is to be the all-in-one solution and
+              offer a wide array of services from market to finance.
+            </p>
           </div>
         </Container>
         <div ref={roadmapNavRef} tw="w-full">

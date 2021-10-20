@@ -1,12 +1,10 @@
 import { memo, RefObject, useEffect, useRef } from 'react'
 import { theme } from 'twin.macro'
 import { gsap } from 'gsap'
-import useTranslation from 'next-translate/useTranslation'
 import { Container } from '@components/UI/Container'
 import { StageItem } from './StageItem'
 import { useAppSelector } from '@lib/redux/hooks'
 import { squareClipPath } from '@components/UI/Frames/SquareFrame'
-import { IStage } from './StageFullPage'
 import {
   clipPathV1,
   clipPathV3,
@@ -52,10 +50,53 @@ const colors = [
   },
 ]
 
+export const stageItems = {
+  stage1: {
+    title: 'Stage 1',
+    name: 'Galaxy',
+    subtitle: 'Foundation',
+    description:
+      'First crucial token and technology foundations and planning development. Building a community and getting people involved.',
+    list: [
+      'Token Creation',
+      'Website Launch',
+      'Presale Launch',
+      'Whitepaper Launch',
+      'Pancakeswap Launch',
+      'YouTube Marketing',
+      'Road to Binance',
+      'CoinMarketCap Listing',
+      'CoinGecko Listing',
+      'Collaboration with influencers',
+    ],
+  },
+  stage2: {
+    title: 'Stage 2',
+    name: 'Pendulum',
+    subtitle: 'Growth',
+    description:
+      'The second phase will implement various stages of testing the platform, products utilized by the ecosystem, and assertive marketing.',
+    list: [
+      'First Third Party Audit',
+      'Bitmart Listing',
+      'Hotbit Listing',
+      'Dex Exchange Launch',
+      'ICO LaunchPad',
+      'Sub-Project Launch & Airdrop',
+      'Profit and Fee Distribution Binance Listing',
+    ],
+  },
+  stage3: {
+    title: 'Stage 3',
+    name: 'Dimension',
+    subtitle: 'Full Decentralization',
+    description: 'The third phase will see complete autonomy of the platform.',
+    unlocking_in: 'Unlocking in\nQ3 2022\n',
+  },
+}
+
 export const RoadmapNavItems = memo(
   ({ navigate, stageRefs }: RoadmapNavItemsProps) => {
-    const { t } = useTranslation('roadmap')
-
     const arrowRefs = useRef<(HTMLButtonElement | null)[]>([])
 
     const animationSpeed = useAppSelector(selectAnimationSpeed)
@@ -132,10 +173,6 @@ export const RoadmapNavItems = memo(
       shouldMorph,
     ])
 
-    const i18nStage1: IStage = t('stage1', null, { returnObjects: true })
-    const i18nStage2: IStage = t('stage2', null, { returnObjects: true })
-    const i18nStage3: IStage = t('stage3', null, { returnObjects: true })
-
     const activeStageIndex = (() => {
       if (stage1Section.isActive) return 1
       if (stage2Section.isActive) return 2
@@ -173,7 +210,7 @@ export const RoadmapNavItems = memo(
 
           <StageItem
             innerRef={stageRefs[0]}
-            item={i18nStage1}
+            item={stageItems.stage1}
             imagePath="/images/stage1_iso.jpg"
             number={1}
             titleColor={theme`colors.blue.300`}
@@ -183,7 +220,7 @@ export const RoadmapNavItems = memo(
           />
           <StageItem
             innerRef={stageRefs[1]}
-            item={i18nStage2}
+            item={stageItems.stage2}
             imagePath="/images/stage2_iso.jpg"
             number={2}
             titleColor={theme`colors.purple.400`}
@@ -193,7 +230,7 @@ export const RoadmapNavItems = memo(
           />
           <StageItem
             innerRef={stageRefs[2]}
-            item={i18nStage3}
+            item={stageItems.stage3}
             imagePath="/images/stage3_iso.jpg"
             number={3}
             navigate={navigate}

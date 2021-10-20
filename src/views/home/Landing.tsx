@@ -3,7 +3,6 @@
 import { Container } from '@components/UI/Container'
 import { Title } from '@components/UI/Title'
 import { Button } from '@components/UI/Button'
-import useTranslation from 'next-translate/useTranslation'
 import Image from 'next/image'
 import tw, { styled, theme } from 'twin.macro'
 import { FaYoutube } from 'react-icons/fa'
@@ -125,8 +124,6 @@ const PartnerLogos = ({ ...props }) => {
 }
 
 // const MarketItems = ({ ...props }) => {
-//   const { t } = useTranslation('home')
-
 //   return (
 //     <div {...props}>
 //       <MarketInfo title={t`landing.current-price`} value="123124" />
@@ -161,8 +158,6 @@ const PresaleTimer = () => {
 }
 
 const CountdownItems = ({ ...props }) => {
-  // const { t } = useTranslation('home')
-
   // TODOPRESALE:
 
   return (
@@ -178,7 +173,6 @@ const CountdownItems = ({ ...props }) => {
 }
 
 export const Landing = () => {
-  const { t } = useTranslation('home')
   // const [
   //   trackersModalIsOpen,
   //   { setTrue: openTrackersModal, setFalse: closeTrackersModal },
@@ -240,10 +234,7 @@ export const Landing = () => {
                 <FaYoutube tw="text-cyan-400 text-4xl mx-auto absolute opacity-40" />
                 <VscLock tw="text-7xl animate-pulse opacity-80" />
               </div>
-              <p tw="font-mono uppercase font-bold animate-pulse opacity-80 text-base mt-4 text-center letter-spacing[1px]">
-                {t`landing.intro-release`}
-                {/* <br /> 2022 */}
-              </p>
+              <p tw="font-mono uppercase font-bold animate-pulse opacity-80 text-base mt-4 text-center letter-spacing[1px]"></p>
             </div>
           )}
         </StyledVideoThumbnail>
@@ -257,11 +248,13 @@ export const Landing = () => {
             {/* ~~~~~~~~~~~~~~~~~ TITLE AND DESCRIPTION ~~~~~~~~~~~~~~~~~ */}
 
             <Title as="h1" tw="lg:text-4xl xl:text-5xl">
-              {t`landing.title`}
+              Kofa Token
             </Title>
 
             <h2 tw="text-base lg:text-lg xl:text-xl pt-2 whitespace-pre-wrap text-coolGray-300 lg:max-w-3xl xl:max-w-xl">
-              {t`landing.description`}
+              Kofa token is a BEP20 token based on Binance Smart Chain network
+              which aims to help small businesses reach their marketing goals
+              and decentralize token ownership overtime
             </h2>
 
             {/* ~~~~~~~~~~~~~~~~~ BUTTONS ~~~~~~~~~~~~~~~~~ */}
@@ -296,9 +289,7 @@ export const Landing = () => {
                     }
                   }}
                 >
-                  <span tw="font-bold font-sans">
-                    {t`landing.contract-address`}:{' '}
-                  </span>
+                  <span tw="font-bold font-sans">Contract Address: </span>
                   <span tw="whitespace-nowrap">
                     <span tw="text-xs md:text-sm font-mono">
                       {config.blockchain.contractAddress}
@@ -338,7 +329,6 @@ export const Landing = () => {
                           <VscLock tw="text-7xl animate-pulse opacity-80" />
                         </div>
                         <p tw="font-mono uppercase font-bold animate-pulse opacity-80 text-base mt-4 text-center letter-spacing[1px]">
-                          {t`landing.intro-release`}
                           {/* <br /> 2022 */}
                         </p>
                       </div>
@@ -378,7 +368,9 @@ export const Landing = () => {
                 alt="Scroll down"
                 tw="animate-bounce"
               />
-              <span tw="font-mono uppercase font-bold letter-spacing[1px] text-sm">{t`landing.scroll-more`}</span>
+              <span tw="font-mono uppercase font-bold letter-spacing[1px] text-sm">
+                Scroll down to know more
+              </span>
             </div>
             {/* TODO: ACTIVATE PARTNERS_LOGOS */}
             <PartnerLogos />

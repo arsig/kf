@@ -11,20 +11,19 @@ import { FrameDivider } from '@root/src/views/home/Landing'
 import { routes } from '@lib/config/routes'
 import { Logo } from './Logo'
 import { SocialIcons } from './SocialBar'
-import useTranslation from 'next-translate/useTranslation'
 import { useRef } from 'react'
 import { useOnClickOutside } from '@lib/hooks/useOnClickOutside'
-import dynamic from 'next/dynamic'
-import { InstanceModalProps } from '@components/Modal/BaseModal'
+// import dynamic from 'next/dynamic'
+// import { InstanceModalProps } from '@components/Modal/BaseModal'
 import { useRouter } from 'next/router'
 import { ReactNode } from 'react'
 import { config } from '@lib/config/config'
 
-const TrackersModal = dynamic<InstanceModalProps>(() =>
-  import('@components/Modal/TrackersModal').then(
-    (module) => module.TrackersModal
-  )
-)
+// const TrackersModal = dynamic<InstanceModalProps>(() =>
+//   import('@components/Modal/TrackersModal').then(
+//     (module) => module.TrackersModal
+//   )
+// )
 
 // This paths keys should map to the content of common:navBar.links
 const paths = {
@@ -32,6 +31,10 @@ const paths = {
   // blog: config.medium,
   // shop: config.shop,
 } as const
+
+const pathKeys = {
+  whitepaper: 'Whitepaper',
+}
 
 const StyledTransitions = styled.div`
   .enter {
@@ -57,10 +60,10 @@ export interface NavBarProps {
 }
 
 export const NavBar = ({ navbarLogo: NavLogo, ...props }: NavBarProps) => {
-  const [
-    trackersModalIsOpen,
-    { setTrue: openTrackersModal, setFalse: closeTrackersModal },
-  ] = useToggle()
+  // const [
+  //   trackersModalIsOpen,
+  //   { setTrue: openTrackersModal, setFalse: closeTrackersModal },
+  // ] = useToggle()
 
   const dropdownRef = useRef<HTMLDivElement>(null)
   const router = useRouter()
@@ -71,12 +74,6 @@ export const NavBar = ({ navbarLogo: NavLogo, ...props }: NavBarProps) => {
   ] = useToggle()
 
   useOnClickOutside(dropdownRef, closeDropdownNav)
-
-  const { t } = useTranslation('common')
-
-  const links: typeof paths = t('navBar.links', null, {
-    returnObjects: true,
-  })
 
   useEffect(() => {
     router.events.on('routeChangeStart', closeDropdownNav)
@@ -117,7 +114,7 @@ export const NavBar = ({ navbarLogo: NavLogo, ...props }: NavBarProps) => {
                     target={paths[key][0] !== '/' ? '_blank' : ''}
                     rel="noopener noreferrer"
                   >
-                    {links[key]}
+                    {pathKeys[key]}
                   </a>
                 </Link>
               ))}
@@ -129,7 +126,7 @@ export const NavBar = ({ navbarLogo: NavLogo, ...props }: NavBarProps) => {
             href={config.buy_on.buy_now}
             targetBlank
           >
-            {t`navBar.buy-now`}
+            Buy Now
           </Button>
 
           {/* Mobile Dialog Button*/}
@@ -164,20 +161,20 @@ export const NavBar = ({ navbarLogo: NavLogo, ...props }: NavBarProps) => {
                 <StyledMobileLine tw="absolute -bottom-4 w-2/3 min-h-[1rem] bg-gray-800" />
                 <Container tw="w-auto pt-8 pb-8 grid grid-cols-2 gap-y-2 gap-x-10 justify-center items-center">
                   {/* todo: enable trackers */}
-                  <button
+                  {/* <button
                     type="button"
                     tw="text-left py-2 hover:text-yellow-400"
                     onClick={openTrackersModal}
                   >
-                    {t`shared.trackers.title`}
-                  </button>
+                    Charts
+                  </button> */}
 
                   {(Object.keys(paths) as Array<keyof typeof paths>).map(
                     (key, index) => (
                       <Fragment key={key}>
                         <Link href={paths[key]} passHref>
                           <a tw="inline-block text-left py-2 hover:text-yellow-400">
-                            {links[key]}
+                            {pathKeys[key]}
                           </a>
                         </Link>
                         {(index + 1) % 2 !== 0 &&
@@ -212,7 +209,7 @@ export const NavBar = ({ navbarLogo: NavLogo, ...props }: NavBarProps) => {
         <div tw="z-index[-1] fixed min-h-screen inset-0 bg-gray-900 bg-opacity-70" />
       )}
 
-      <TrackersModal isOpen={trackersModalIsOpen} close={closeTrackersModal} />
+      {/* <TrackersModal isOpen={trackersModalIsOpen} close={closeTrackersModal} /> */}
     </>
   )
 }

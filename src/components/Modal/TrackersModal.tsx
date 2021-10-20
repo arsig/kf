@@ -1,30 +1,23 @@
 import React from 'react'
 import { SquareFrame } from '@components/UI/Frames/SquareFrame'
-import { Dialog } from '@headlessui/react'
-import useTranslation from 'next-translate/useTranslation'
-import { config } from '@lib/config/config'
-import { FrameDivider } from '@root/src/views/home/Landing'
-import { RiCloseFill } from 'react-icons/ri'
-import { HiOutlineExternalLink } from 'react-icons/hi'
+// import { Dialog } from '@headlessui/react'
+// import { config } from '@lib/config/config'
+// import { FrameDivider } from '@root/src/views/home/Landing'
+// import { RiCloseFill } from 'react-icons/ri'
+// import { HiOutlineExternalLink } from 'react-icons/hi'
 import { BaseModal, InstanceModalProps } from './BaseModal'
 
-interface TrackersI18N {
-  title: string
-  description: string
-  list: typeof config.trackers
-}
+// interface TrackersI18N {
+//   title: string
+//   description: string
+//   list: typeof config.trackers
+// }
 
 export const TrackersModal = ({ isOpen, close }: InstanceModalProps) => {
-  const { t } = useTranslation('common')
-
-  const trackers: TrackersI18N = t('shared.trackers', null, {
-    returnObjects: true,
-  })
-
   return (
     <BaseModal isOpen={isOpen} close={close}>
       <SquareFrame className="inline-block w-full max-w-md overflow-hidden text-left m-auto transition-all transform text-coolGray-300">
-        <div tw="px-6 py-6">
+        {/* <div tw="px-6 py-6">
           <div tw="flex justify-between">
             <Dialog.Title
               as="h3"
@@ -46,7 +39,6 @@ export const TrackersModal = ({ isOpen, close }: InstanceModalProps) => {
             {trackers.description}
           </Dialog.Description>
 
-          {/* todo: refactor the "as keyof..." */}
           <ul tw="mt-8 space-y-6">
             {Object.keys(config.trackers).map((key) =>
               config.trackers[key as keyof typeof config.trackers] ? (
@@ -74,7 +66,7 @@ export const TrackersModal = ({ isOpen, close }: InstanceModalProps) => {
               ) : null
             )}
           </ul>
-        </div>
+        </div> */}
       </SquareFrame>
     </BaseModal>
   )

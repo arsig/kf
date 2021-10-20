@@ -10,7 +10,6 @@ import {
   toggleShowNavbar,
 } from '@lib/redux/slices/navSlice'
 import { Button } from '@components/UI/Button'
-import useTranslation from 'next-translate/useTranslation'
 import { theme } from 'twin.macro'
 import { config } from '../../lib/config/config'
 
@@ -52,8 +51,6 @@ export const Nav = ({ navbarLogo }: NavProps) => {
     })
   }, [showNavbar, speed, navPosition, dispatch])
 
-  const { t } = useTranslation('common')
-
   return (
     <>
       <div ref={navbarRef} tw="fixed z-50 w-full transition-all duration-100">
@@ -74,7 +71,7 @@ export const Nav = ({ navbarLogo }: NavProps) => {
           targetBlank
           bgColor={theme`colors.emerald.400`}
         >
-          {t`navBar.buy-now`}
+          Buy Now
         </Button>
         {/* <Button tw="w-full" bgColor={theme`colors.t`} href={routes.how_to_buy}> */}
         {/* Buy $DESP */}

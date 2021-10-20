@@ -3,7 +3,6 @@ import { useToggle } from '@lib/hooks/useToggle'
 import React, { useEffect } from 'react'
 import { RiFileCopyLine } from 'react-icons/ri'
 import { ClipboardTooltip } from './ClipboardTooltip'
-import useTranslation from 'next-translate/useTranslation'
 import { theme } from 'twin.macro'
 
 interface ContractAddressProps {
@@ -18,8 +17,6 @@ export const ContractAddress = ({
   bgColor,
   ...props
 }: ContractAddressProps) => {
-  const { t } = useTranslation('common')
-
   const [
     isClipboardTooltipOpen,
     { setTrue: openClipboardTooltip, setFalse: closeClipboardTooltip },
@@ -50,7 +47,7 @@ export const ContractAddress = ({
         }}
       >
         <span tw="block sm:inline-block font-bold">
-          {title || t`shared.contract_address`}:
+          {title || 'Contract Address'}:
         </span>
 
         <span tw="lg:ml-2 block sm:inline-block font-mono max-w-full overflow-x-auto">

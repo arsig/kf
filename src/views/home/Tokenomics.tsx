@@ -1,8 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 import { NavSpacer } from '@components/Nav/NavSpacer'
 import { Container } from '@components/UI/Container'
 import { SquareFrame } from '@components/UI/Frames/SquareFrame'
 import { Title } from '@components/UI/Title'
-import useTranslation from 'next-translate/useTranslation'
 import Image from 'next/image'
 import tw, { styled, theme } from 'twin.macro'
 import bgImg from '@public/images/tokenomics_background.webp'
@@ -33,14 +33,16 @@ const tokenStructureItems = [
     description: '1 BNB = 50,000,000 KOFA',
   },
   {
+    label: 'ICO PRICE:',
+    description: '$0.00001',
+  },
+  {
     label: 'PROTOCOL:',
     description: 'BEP20 (BSC)',
   },
 ]
 
 export const Tokenomics = () => {
-  const { t } = useTranslation('home')
-
   return (
     <>
       <StyledBackground
@@ -53,8 +55,13 @@ export const Tokenomics = () => {
 
       <Container tw="mt-10 lg:mt-0 mx-auto flex flex-col max-h-full flex-1">
         <div tw="text-center mt-10">
-          <Title>{t`tokenomics.title`}</Title>
-          <p tw="text-coolGray-300 mt-6 max-w-3xl mx-auto">{t`tokenomics.description`}</p>
+          <Title>Token Structure</Title>
+          <p tw="text-coolGray-300 mt-6 max-w-3xl mx-auto">
+            KOFA Token is a platform for the future of marketing that is built
+            on top of the Binance Smart Chain. It accelerates growth of start-up
+            companies by offering tools and services that grants exposure to a
+            targeted audience and help generate sales.
+          </p>
         </div>
 
         <div tw="relative grid-auto-rows[100%] block gap-0 lg:grid lg:gap-10 grid-flow-col grid-cols-[2.5fr 1.5fr] lg:space-x-10 max-h-full flex-1 overflow-hidden pt-10">
@@ -87,11 +94,14 @@ export const Tokenomics = () => {
                   <div tw="text-green-400">50% Public Sale</div>
                   <div tw="text-purple-500">20% Development and Marketing</div>
                   <div tw="text-yellow-400">15% Reserved Funding</div>
-                  <div tw="text-cyan-400">15% Reserved Funding</div>
+                  <div tw="text-cyan-400">10% Founders and Team</div>
                   <div tw="text-red-400">5% &quot;Bounty&quot; Campaign</div>
                 </div>
                 <div tw="pt-5 flex items-center justify-center">
-                  <Image src={tokenDistributionImg} alt="Token Distribution" />
+                  <img
+                    src="/images/token_distribution.png"
+                    alt="Token Distribution"
+                  />
                 </div>
               </div>
             </SquareFrame>

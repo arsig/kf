@@ -2,12 +2,11 @@
 import { Container } from '@components/UI/Container'
 import { FullScreen } from '@components/UI/FullScreen'
 import { Title } from '@components/UI/Title'
-import useTranslation from 'next-translate/useTranslation'
 import Image from 'next/image'
 import { RefObject } from 'react'
 import tw from 'twin.macro'
 import { VscLock } from 'react-icons/vsc'
-
+import { stageItems } from './RoadmapNavItems'
 export interface IStage {
   title: string
   description: string
@@ -15,7 +14,7 @@ export interface IStage {
   subtitle: string
   date?: string
   timeframe?: string
-  list: string[]
+  list?: string[]
   unlocking_in?: string
 }
 
@@ -36,9 +35,7 @@ export const StageFullPage = ({
   innerRef,
   isLocked,
 }: StageFullPageProps) => {
-  const { t } = useTranslation('roadmap')
-
-  const stage: IStage = t(stageKey, null, { returnObjects: true })
+  const stage: IStage = stageItems[stageKey]
   const { title, date, description, list, name, subtitle, unlocking_in } = stage
 
   return (
