@@ -6,6 +6,7 @@ import useTranslation from 'next-translate/useTranslation'
 import Image from 'next/image'
 import tw, { styled, theme } from 'twin.macro'
 import bgImg from '@public/images/tokenomics_background.webp'
+import tokenDistributionImg from '@public/images/token_distribution.png'
 import { Fragment } from 'react'
 
 const StyledBackground = styled(Image)`
@@ -88,6 +89,9 @@ export const Tokenomics = () => {
                   <div tw="text-yellow-400">15% Reserved Funding</div>
                   <div tw="text-cyan-400">15% Reserved Funding</div>
                   <div tw="text-red-400">5% &quot;Bounty&quot; Campaign</div>
+                </div>
+                <div tw="pt-5 flex items-center justify-center">
+                  <Image src={tokenDistributionImg} alt="Token Distribution" />
                 </div>
               </div>
             </SquareFrame>

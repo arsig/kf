@@ -39,17 +39,15 @@ features:
   description: Our clients – both corporate and private ones – will access all the services they need from a single platform. Blockchain technology gives us the chance to make your finances grow faster and give better returns.
   list:
     - title: Blockchain Strategy
-      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      description: More than simply build awareness – it’s about cutting through a crowded and hype-driven market with bold campaigns that differentiate quickly.
     - title: Tokens and Smart Contracts
-      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      description: Provide confidence to organizations around the usage of and interaction with blockchain-based applications and smart contracts.
     - title: ICO Marketing
-      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    - title: Global Payment
-      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      description: Accelerates growth of start-up companies by offering tools and services that grants exposure to a targeted audience and help generate sales.
     - title: Marketing and Promotion Services
-      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    - title: Private Transactions
-      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      description: The first version of the KOFA allows business startups to launch and market or promote their services to the required or targeted audience using crowdfunding and ICO campaigns.
+    - title: Global Payment
+      description: Technology promises to facilitate fast, secure, low-cost international payment processing services through the use of encrypted distributed ledgers that provide trusted real-time verification of transactions.
 roadmap:
   title: Kofa Roadmap
   description:

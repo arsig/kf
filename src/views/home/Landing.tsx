@@ -13,7 +13,7 @@ import { config } from '@lib/config/config'
 import { useEffect } from 'react'
 
 import bgImg from '@public/images/bg_landing.png'
-import introVideoImg from '@public/images/bg__intro-video.jpg'
+import introVideoImg from '@public/images/bg__intro-video.png'
 import { VscLock } from 'react-icons/vsc'
 import dynamic from 'next/dynamic'
 import { InstanceModalProps } from '@components/Modal/BaseModal'
@@ -46,7 +46,7 @@ const StyledVideoFrame = styled.div`
 `
 
 const StyledVideoThumbnail = styled.div<any>`
-  background-image: url('/images/bg__intro-video.jpg');
+  background-image: url('/images/bg__intro-video.png');
   ${tw`bg-cover bg-no-repeat bg-center relative`}
 
   &:after {

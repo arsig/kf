@@ -17,7 +17,7 @@ export const Features = () => {
 
       <div tw="block lg:hidden mt-20 relative w-full h-96">
         <img
-          src="/images/platform_features.png"
+          src="/images/platform_bg.png"
           alt="Platform Features"
           tw="w-full h-full absolute object-contain transform ml-4 scale-150"
         />
@@ -37,7 +37,7 @@ export const Features = () => {
           }}
         >
           <img
-            src="/images/platform_features.png"
+            src="/images/platform_bg.png"
             alt="Platform Features"
             tw="absolute top-0 transform left-1/2 -translate-x-full z-index[-1] max-h-full xl:max-h-[110%]"
           />
