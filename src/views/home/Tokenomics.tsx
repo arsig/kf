@@ -65,11 +65,11 @@ export const Tokenomics = () => {
               shadowColor="cyan"
               bgColor={theme`colors.gray.800`}
             >
-              <div tw="p-5 grid grid-cols-2 font-mono text-xl font-bold gap-y-3">
+              <div tw="p-5 grid sm:grid-cols-2 font-mono text-xl font-bold gap-y-1 sm:gap-y-3">
                 {tokenStructureItems.map((item) => (
                   <Fragment key={item.label}>
                     <div tw="text-cyan-400">{item.label}</div>
-                    <div>{item.description}</div>
+                    <div tw="pb-4 sm:pb-0">{item.description}</div>
                   </Fragment>
                 ))}
               </div>
