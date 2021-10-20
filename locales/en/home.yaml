@@ -1,0 +1,56 @@
+---
+coming-soon: Coming soon
+landing:
+  pre-sale: Pre-Sale
+  launch: Launch
+  title: Kofa Token
+  description: 'Kofa token is a BEP20 token based on Binance Smart Chain network which aims to help small businesses reach their marketing goals and decentralize token ownership overtime'
+  join-telegram: Telegram
+  trackers: Charts
+  buy-now: Buy Now
+  contract-address: Contract Address
+  current-price: Current Price
+  holders: Holders
+  supply: Supply
+  marketcap: Marketcap
+  scroll-more: Scroll down to know more
+tokenomics:
+  title: Token Structure
+  description: KOFA Token is a platform for the future of marketing that is built on top of the Binance Smart Chain. It accelerates growth of start-up companies by offering tools and services that grants exposure to a targeted audience and help generate sales.
+  token_supply:
+    public_sale: 50% Public Sale
+    development: 20% Development and Marketing
+    funding: 15% Reserved Funding
+    team: 10% Founders and Team
+    bounty: 5% "Bounty" Campaign
+  list:
+    - title: For Sale
+      description: 200B KOFA
+    - title: Hard Cap
+      description: $1.5M
+    - title: Token
+      description: KOFA
+    - title: Exchange Rate
+      description: 1 BNB = 50,000,000 KOFA
+    - title: Protocol
+      description: BEP20 (BSC)
+features:
+  title: Platform Features
+  description: Our clients – both corporate and private ones – will access all the services they need from a single platform. Blockchain technology gives us the chance to make your finances grow faster and give better returns.
+  list:
+    - title: Blockchain Strategy
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    - title: Tokens and Smart Contracts
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    - title: ICO Marketing
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    - title: Global Payment
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    - title: Marketing and Promotion Services
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    - title: Private Transactions
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+roadmap:
+  title: Kofa Roadmap
+  description:
+    'The ultimate goal of KOFA is to be the all-in-one solution and offer a wide array of services from market to finance.'

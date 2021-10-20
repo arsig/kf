@@ -1,0 +1,31 @@
+---
+shared:
+  contract_address: Contract Address
+  whitepaper: Whitepaper
+  telegram: Telegram
+  buy-now: Buy Now
+  contract: Contract
+  how-to-buy: How to buy
+  blog: Blog
+  trackers:
+    title: Charts
+    description: Clicking on a link will open the website in a new tab.
+    list:
+      bscscan: BSCScan
+      coinmarketcap: CoinMarketCap
+      coingecko: CoinGecko
+      poocoin: PooCoin
+      boggedfinance: Bogged Finance
+      dextools: DexTools
+
+navBar:
+  buy-now: Buy Now
+  links:
+    whitepaper: Whitepaper
+footer:
+  title: This is just the beginning
+  pre-sale: ICO ends in
+  launch: Launch in
+  contact-us: Contact us
+  copyright: Copyright KOFA Token Based on BSC Network © 2021. All rights reserved.
+  trademarks: All other copyrights and trademarks are the property of their respective owners.
