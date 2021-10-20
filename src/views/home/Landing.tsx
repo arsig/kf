@@ -6,15 +6,7 @@ import { Button } from '@components/UI/Button'
 import useTranslation from 'next-translate/useTranslation'
 import Image from 'next/image'
 import tw, { styled, theme } from 'twin.macro'
-
-import { GiTrophyCup } from 'react-icons/gi'
 import { FaYoutube } from 'react-icons/fa'
-
-// import coinmarketcapImg from '@public/images/trackers/coinmarketcap.png'
-// import coingeckoImg from '@public/images/trackers/coingecko.png'
-// import techrateImg from '@public/images/logos/logo_techrate.webp'
-// import { MarketInfo } from './MarketInfo'
-// import { SquareFrame } from '../../components/UI/Frames/SquareFrame'
 import { RiFileCopyLine } from 'react-icons/ri'
 import { useToggle } from '@lib/hooks/useToggle'
 import { config } from '@lib/config/config'
@@ -27,7 +19,6 @@ import dynamic from 'next/dynamic'
 import { InstanceModalProps } from '@components/Modal/BaseModal'
 import { useClipboard } from '@lib/hooks/useClipboard'
 import { ClipboardTooltip } from '@components/Miscellaneous/ClipboardTooltip'
-// import { routes } from '@lib/config/routes'
 import { useTimeLeft } from '@lib/hooks/useTimeLeft'
 
 const DemoVideoModal = dynamic<InstanceModalProps>(() =>
@@ -114,27 +105,6 @@ export const FrameDivider = styled.div<FrameDividerProps>`
     clip-path: polygon(100% 0%, 100% 100%, 1rem 100%, 0 0);
   }
 `
-
-const PrizePool = ({ ...props }) => {
-  return (
-    <aside tw="flex items-center lg:block" {...props}>
-      <GiTrophyCup tw="text-yellow-400 inline-block lg:hidden text-5xl mr-2" />
-      <div tw="font-mono font-bold uppercase">
-        <h4 tw="text-sm lg:text-base letter-spacing[1px]">
-          {/* todo: translate */}
-          Competitions Prize Pool
-        </h4>
-        <div tw="text-yellow-400 text-xl lg:text-3xl xl:text-4xl lg:mt-2">
-          231.123.235,32 USD
-        </div>
-        <FrameDivider
-          color={theme`colors.cyan.400`}
-          tw="hidden lg:block mt-3"
-        />
-      </div>
-    </aside>
-  )
-}
 
 const PartnerLogos = ({ ...props }) => {
   return (
@@ -239,9 +209,6 @@ export const Landing = () => {
   // todo: make dynamic
   const navSize = '100px'
   const clipboard = useClipboard()
-
-  // todo: remove this
-  const prizePoolIsAvailable = false
 
   return (
     <>
