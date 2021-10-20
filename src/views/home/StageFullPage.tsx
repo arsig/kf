@@ -1,8 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 /** @jsxImportSource @emotion/react */
 import { Container } from '@components/UI/Container'
 import { FullScreen } from '@components/UI/FullScreen'
 import { Title } from '@components/UI/Title'
-import Image from 'next/image'
 import { RefObject } from 'react'
 import tw from 'twin.macro'
 import { VscLock } from 'react-icons/vsc'
@@ -20,8 +20,8 @@ export interface IStage {
 
 interface StageFullPageProps {
   stageKey: 'stage1' | 'stage2' | 'stage3'
-  image: StaticImageData
-  bgImage: StaticImageData
+  image: string
+  bgImage: string
   color: string
   innerRef: RefObject<HTMLDivElement>
   isLocked?: boolean
@@ -57,7 +57,7 @@ export const StageFullPage = ({
               </div>
 
               <div tw="lg:hidden max-w-xs px-8 lg:px-0 relative mt-8 lg:mt-14 mx-auto">
-                <Image src={image} objectFit="contain" alt="Stage Image" />
+                <img src={image} tw="object-contain" alt="Stage" />
               </div>
 
               <div tw="mt-8 lg:mt-5 flex items-center space-x-4 justify-center lg:justify-start">
@@ -106,12 +106,11 @@ export const StageFullPage = ({
             tw="hidden lg:block max-w-sm relative mt-14"
             css={[isLocked && tw`mx-auto`]}
           >
-            <Image
+            <img
               src={image}
-              objectFit="contain"
-              alt="Stage Image"
+              alt="Stage"
               placeholder="blur"
-              tw="rounded-md"
+              tw="rounded-md object-contain"
             />
 
             {isLocked && (
@@ -130,11 +129,10 @@ export const StageFullPage = ({
                 <div tw="font-mono font-bold mt-4 text-center">{date}</div>
 
                 <div tw="lg:hidden max-w-xs px-8 lg:px-0 relative mt-8 lg:mt-14 mx-auto">
-                  <Image
+                  <img
                     src={image}
-                    objectFit="contain"
-                    alt="Stage Image"
-                    tw="z-index[-1]"
+                    alt="Stage"
+                    tw="object-contain z-index[-1]"
                   />
                   <div tw="z-10 absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center text-coolGray-400 animate-pulse">
                     <VscLock tw="text-8xl" />
@@ -186,14 +184,11 @@ export const StageFullPage = ({
       </Container>
 
       <div tw="z-index[-5]">
-        <Image
+        <img
           src={bgImage}
           alt="Background"
-          layout="fill"
           placeholder="blur"
-          objectFit="cover"
-          objectPosition="center"
-          tw="absolute w-full h-full z-index[-5] opacity-20"
+          tw="absolute object-cover top-0 w-full h-full z-index[-5] opacity-20"
           css={[isLocked && tw`opacity-40`]}
         />
       </div>

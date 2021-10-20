@@ -3,12 +3,12 @@ import { Features, Landing, Tokenomics } from '@views/home'
 import { useAnimations } from '@views/home/useAnimations'
 import { RoadmapNav } from '@views/home/RoadmapNav'
 import { StageFullPage } from '@views/home/StageFullPage'
-import stage1BG from '@public/images/stage1.jpg'
-import stage2BG from '@public/images/stage2.jpg'
-import stage3BG from '@public/images/stage3.jpg'
-import stage1Img from '@public/images/stage1_iso.jpg'
-import stage2Img from '@public/images/stage2_iso.jpg'
-import stage3Img from '@public/images/stage3_iso.jpg'
+// import stage1BG from '@public/images/stage1.jpg'
+// import stage2BG from '@public/images/stage2.jpg'
+// import stage3BG from '@public/images/stage3.jpg'
+// import stage1Img from '@public/images/stage1_iso.jpg'
+// import stage2Img from '@public/images/stage2_iso.jpg'
+// import stage3Img from '@public/images/stage3_iso.jpg'
 import tw, { theme } from 'twin.macro'
 import { HomeFooter } from '../views/home/HomeFooter'
 import { NavSpacer } from '@components/Nav/NavSpacer'
@@ -107,22 +107,22 @@ export default function Home() {
               innerRef={s1Ref}
               color={theme`colors.blue.300`}
               stageKey="stage1"
-              image={stage1Img}
-              bgImage={stage1BG}
+              image="/images/stage1_iso.jpg"
+              bgImage="/images/stage1.jpg"
             />
             <StageFullPage
               innerRef={s2Ref}
               color={theme`colors.purple.300`}
               stageKey="stage2"
-              image={stage2Img}
-              bgImage={stage2BG}
+              image="/images/stage2_iso.jpg"
+              bgImage="/images/stage2.jpg"
             />
             <StageFullPage
               innerRef={s3Ref}
               color={theme`colors.red.500`}
               stageKey="stage3"
-              image={stage3Img}
-              bgImage={stage3BG}
+              image="/images/stage3_iso.jpg"
+              bgImage="/images/stage3.jpg"
               isLocked
             />
             <FullScreen

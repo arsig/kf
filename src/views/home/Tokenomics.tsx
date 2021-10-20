@@ -3,13 +3,10 @@ import { NavSpacer } from '@components/Nav/NavSpacer'
 import { Container } from '@components/UI/Container'
 import { SquareFrame } from '@components/UI/Frames/SquareFrame'
 import { Title } from '@components/UI/Title'
-import Image from 'next/image'
 import tw, { styled, theme } from 'twin.macro'
-import bgImg from '@public/images/tokenomics_background.webp'
-import tokenDistributionImg from '@public/images/token_distribution.png'
 import { Fragment } from 'react'
 
-const StyledBackground = styled(Image)`
+const StyledBackground = styled.img`
   ${tw`absolute z-index[-1] bg-contain bg-center bg-no-repeat w-full h-full opacity-[.15]`}
   mix-blend-mode: color-dodge;
   filter: brightness(50%);
@@ -46,10 +43,8 @@ export const Tokenomics = () => {
   return (
     <>
       <StyledBackground
-        src={bgImg}
-        tw="bg-top lg:bg-center"
-        layout="fill"
-        objectFit="contain"
+        src="/images/tokenomics_background.webp"
+        tw="bg-top lg:bg-center absolute top-0 object-contain"
       />
       <NavSpacer tw="hidden lg:block" />
 

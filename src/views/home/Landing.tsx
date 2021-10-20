@@ -3,7 +3,6 @@
 import { Container } from '@components/UI/Container'
 import { Title } from '@components/UI/Title'
 import { Button } from '@components/UI/Button'
-import Image from 'next/image'
 import tw, { styled, theme } from 'twin.macro'
 import { FaYoutube } from 'react-icons/fa'
 import { RiFileCopyLine } from 'react-icons/ri'
@@ -11,8 +10,6 @@ import { useToggle } from '@lib/hooks/useToggle'
 import { config } from '@lib/config/config'
 import { useEffect } from 'react'
 
-import bgImg from '@public/images/bg_landing.png'
-import introVideoImg from '@public/images/bg__intro-video.png'
 import { VscLock } from 'react-icons/vsc'
 import dynamic from 'next/dynamic'
 import { InstanceModalProps } from '@components/Modal/BaseModal'
@@ -200,21 +197,16 @@ export const Landing = () => {
     }
   }, [closeClipboardTooltip, isClipboardTooltipOpen])
 
-  // todo: make dynamic
-  const navSize = '100px'
   const clipboard = useClipboard()
 
   return (
     <>
       <div tw="opacity-20 z-index[-1] hidden lg:block">
-        <Image
-          src={bgImg}
+        <img
+          src="/images/bg_landing.png"
           alt="Background"
           placeholder="blur"
-          layout="fill"
-          objectFit="cover"
-          objectPosition={`0 ${navSize}`}
-          tw="w-screen h-screen"
+          tw="w-screen h-screen absolute top-0 left-0"
         />
       </div>
 
@@ -310,12 +302,10 @@ export const Landing = () => {
               <div tw="z-10 flex flex-col justify-start w-full bg-gray-900 -ml-2">
                 <div tw="h-[60%] flex items-center pl-4 pt-10 overflow-hidden">
                   <StyledVideoFrame tw="my-auto">
-                    <Image
-                      src={introVideoImg}
+                    <img
+                      src="/images/bg__intro-video.png"
                       alt="video"
-                      tw="z-[-1] opacity-30"
-                      layout="fill"
-                      objectFit="cover"
+                      tw="z-[-1] opacity-30 object-cover"
                     />
 
                     {config.demoVideo ? (

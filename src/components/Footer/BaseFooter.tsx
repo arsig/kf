@@ -1,8 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link'
 import { SocialIcons } from '@components/Nav/SocialBar'
 import { routes } from '@lib/config/routes'
-import logoImg from '@public/images/logos/kofatoken.png'
-import Image from 'next/image'
 import { Container } from '@components/UI/Container'
 import tw, { styled } from 'twin.macro'
 import { config } from '@lib/config/config'
@@ -17,7 +16,7 @@ const StyledContainer = styled(Container)`
 export const KofaFooterLogo = ({ ...props }) => {
   return (
     <div tw="w-16 h-16 lg:w-10 lg:h-10 relative flex items-center" {...props}>
-      <Image src={logoImg} alt="Kofa Logo" />
+      <img src="/images/logos/kofatoken.png" alt="Kofa Logo" />
     </div>
   )
 }

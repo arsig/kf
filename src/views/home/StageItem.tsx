@@ -7,7 +7,6 @@ import { useAppSelector } from '@lib/redux/hooks'
 import { memo, RefObject, useEffect, useRef } from 'react'
 import tw from 'twin.macro'
 import { gsap } from 'gsap'
-import Image from 'next/image'
 import { Container } from '@components/UI/Container'
 import {
   selectAnimationSpeed,
@@ -38,7 +37,7 @@ type MobileStageItemProps = Pick<
   StageItemProps,
   'item' | 'titleColor' | 'isLocked' | 'innerRef'
 > & {
-  imagePath: StaticImageData
+  imagePath: string
 }
 
 export const MobileStageItem = ({
@@ -62,7 +61,7 @@ export const MobileStageItem = ({
           opacity: imageOpacity,
         }}
       >
-        <Image src={imagePath} alt={`Stage item`} tw="object-cover" />
+        <img src={imagePath} alt={`Stage item`} tw="object-cover" />
       </SquareFrame>
 
       <div tw="w-7/12 sm:w-3/12 mt-4 font-mono uppercase font-bold transition-all duration-500 text-4xl ml-5">
